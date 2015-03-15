@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta name="viewport" content="maximum-scale=1, width=device-width" />
+  <link href="rock.css" rel="stylesheet">
+  <link href="reset.css" rel="stylesheet">
+</head>
+<body>
+  <div id="content">
+    <div id="game_pane">
+      <div id="game_result">
+        <table style="width:100%;">
+          <tr>
+            <td style="text-align:center;">
+              <div>NPC</div>
+              <div id="npc_result">?</div>
+            </td>
+            <td style="width:2px; font-size:20px;">vs</td>
+            <td style="text-align:center;">
+              <div>YOU</div>
+              <div id="you_result">?</div>
+            </td>
+          </tr>
+        </table>
+        <div id="game_result_text"></div>
+      </div>
+      <div id="buttons_container">
+        <div id="button0" class="button0 button"></div>
+        <div id="button1" class="button1 button"></div>
+        <div id="button2" class="button2 button"></div>
+      </div>
+      <div id="your_selection"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="shake.js"></script>
+  <script type="text/javascript" src="rock.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      var rock = new RockGame();
+      rock.start();
+    };
+  </script>
+</body>
+</html>
