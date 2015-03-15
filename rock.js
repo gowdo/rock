@@ -32,15 +32,15 @@
     this.hands = [
       {
         name:"Rock", 
-        pic: "rock.png"
+        pic: "images/rock.png"
       },
       {
         name:"Paper", 
-        pic: "paper.png"
+        pic: "images/paper.png"
       },
       {
         name:"Scissors", 
-        pic: "scissors.png"
+        pic: "images/scissors.png"
       }];
 
     if(typeof options === "object") {

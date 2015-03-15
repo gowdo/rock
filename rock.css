@@ -19,7 +19,7 @@
   text-align: center;
 }
 #npc_result, #you_result{
-  height:200px;
+  /*height:100px;*/
 }
 #your_selection {
   /*font-size: 80px;*/
@@ -33,22 +33,22 @@
 }
 
 .button0 {
-  background-image: url("rock.png");
+  background-image: url("images/rock.png");
 }
 .button1 {
-  background-image: url("paper.png");
+  background-image: url("images/paper.png");
 }
 .button2 {
-  background-image: url("scissors.png");
+  background-image: url("images/scissors.png");
 }
 .button0_pressed {
-  background-image: url("rock1.png");
+  background-image: url("images/rock1.png");
 }
 .button1_pressed {
-  background-image: url("paper1.png");
+  background-image: url("images/paper1.png");
 }
 .button2_pressed {
-  background-image: url("scissors1.png");
+  background-image: url("images/scissors1.png");
 }
 .button {
   /*
