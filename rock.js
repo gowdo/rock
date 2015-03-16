@@ -82,11 +82,8 @@
       this.buttons[i].className = "button"+i+" button";
     }
     this.buttons[b].className = "button"+b+"_pressed button button_pressed";
+    $$("you_result").innerHTML = "<div class='button"+this.userHand+" button' />"
     //this.displayResult(2,2);
-  };
-
-  RockGame.prototype.start = function(){
-    //var timer = 
   };
 
   RockGame.prototype.shake = function(){
@@ -99,7 +96,7 @@
     }
     else{
       $$("npc_result").innerHTML = "?";
-      $$("you_result").innerHTML = "?";
+      //$$("you_result").innerHTML = "?";
       $$("game_result_text").innerHTML = this.shakeCount;
       //$$("game_result").innerHTML = txt;
     }
@@ -150,11 +147,10 @@
   };
 
   RockGame.prototype.displayResult = function(npc, you, win){
-    //$$("npc_result").className = "button"+npc;   
-    //$$("you_result").className = "button"+you;   
-    //$$("game_result").innerHTML = r;
-    $$("npc_result").innerHTML = "<img src='"+this.hands[npc].pic+"' />"
-    $$("you_result").innerHTML = "<img src='"+this.hands[you].pic+"' />"
+    //$$("npc_result").innerHTML = "<img src='"+this.hands[npc].pic+"' />"
+    //$$("you_result").innerHTML = "<img src='"+this.hands[you].pic+"' />"
+    $$("npc_result").innerHTML = "<div class='button"+npc+" button' />"
+    $$("you_result").innerHTML = "<div class='button"+you+" button' />"
     var txt = "";
     if(win === 0){
       txt = "Draw";
@@ -166,8 +162,6 @@
       txt = "You Lose";
     }
     $$("game_result_text").innerHTML = txt;
-
-    //$$("you_result").innerHTML = you;
   };
 
 
