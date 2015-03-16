@@ -50,10 +50,17 @@
         }
       }
     }
-    this.init();
+    
+    $$("help_pane").style.display = "block";
+    $$("ok_container").addEventListener("click", (function(){
+                                                    $$("help_pane").style.display = "none";
+                                                    $$("game_pane").style.display = "block";
+                                                    this.start();
+                                                  }).bind(this));
+    //this.start();
   }
 
-  RockGame.prototype.init = function(){
+  RockGame.prototype.start = function(){
     var that = this;
     var buttons = $$("buttons_container").getElementsByTagName("div");
     for(var b=0;b<buttons.length;b++){

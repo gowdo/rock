@@ -1,4 +1,4 @@
-#game_pane {
+#game_pane, #help_pane {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -10,8 +10,16 @@
   touch-action: none;
   background-color: #FFFFFF;
   font-family: sans-serif;
+  display:none;
 }
-#game_result {
+/*
+#help_pane {
+  text-align: center;
+  height:100%;
+}
+*/
+#game_result, #help_pane >:first-child {
+  text-align: center;
   height: 100%;
   font-size: 40px;
 }
@@ -31,6 +39,14 @@
   column-count: 3;
   background-color: #FFFFFF;
   margin-top: -169px;
+}
+#ok_container {
+  clear: both;
+  position: relative;
+  font-size:80px;
+  text-align:center;
+  height: 100px;
+  margin-top: -100px;
 }
 
 .button0 {
