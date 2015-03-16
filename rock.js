@@ -98,7 +98,6 @@
       $$("npc_result").innerHTML = "?";
       //$$("you_result").innerHTML = "?";
       $$("game_result_text").innerHTML = this.shakeCount;
-      //$$("game_result").innerHTML = txt;
     }
   };
 
