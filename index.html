@@ -20,7 +20,7 @@
               <div id="you_result">?</div>
             </td>
           </tr>
-          <tr><td colspan="3"><div id="game_result_text"></div></td></tr>
+          <tr><td colspan="3"><div id="game_result_text"><br />Hold a hand and shake</div></td></tr>
         </table>
         
       </div>
@@ -32,14 +32,28 @@
       <div id="your_selection"></div>
     </div>
     <div id="help_pane">
-    <div>
-      <div>Rock, Paper, Scissors</div>
-      <img src="images/instructions.png" />
+      <div>
+        <div>Rock, Paper, Scissors</div>
+        <img src="images/instructions.png" />
+      </div>
+      <div id="ok_container">PLAY</div>
     </div>
-    <div id="ok_container">PLAY</div>
+    <div id="mobilecheck_pane">
+      <div>
+        <div>Rock, Paper, Scissors<br />This game is for mobile devices only.<br/>Please load this site on your phone</div>
+      </div>
+    </div>
+    <div id="hidden_preloader">
+      <img src="images/rock.png" />
+      <img src="images/rock1.png" />
+      <img src="images/paper.png" />
+      <img src="images/paper1.png" />
+      <img src="images/scissors.png" />
+      <img src="images/scissors1.png" />
     </div>
   </div>
 
+  <script type="text/javascript" src="mobilecheck.js"></script>
   <script type="text/javascript" src="shake.js"></script>
   <script type="text/javascript" src="rock.js"></script>
   <script type="text/javascript">

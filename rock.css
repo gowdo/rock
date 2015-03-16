@@ -1,4 +1,4 @@
-#game_pane, #help_pane {
+#game_pane, #help_pane, #mobilecheck_pane, #hidden_preloader {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -18,13 +18,14 @@
   height:100%;
 }
 */
-#game_result, #help_pane >:first-child {
+#game_result, #help_pane >:first-child, #mobilecheck_pane >:first-child {
   text-align: center;
   height: 100%;
   font-size: 40px;
 }
 #game_result_text {
   text-align: center;
+  font-size: 32px;
 }
 #npc_result, #you_result{
   /*height:100px;*/
