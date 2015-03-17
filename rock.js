@@ -35,9 +35,9 @@
       }
     }
 
-    /* member vars*/
+    /* vars */
     this.buttons = [];
-    this.userHand = 0;
+    this.userHand = -1;
     this.shakeCount = 0;
 
     /* we don't want this working on a desktop.
@@ -49,12 +49,26 @@
       /* display the welcome pane */
       $$("help_pane").style.display = "block";
       $$("ok_container").addEventListener("click", (function(){
-                                                      $$("help_pane").style.display = "none";
-                                                      $$("game_pane").style.display = "block";
+                                                      this.reset();
                                                       this.start();
                                                     }).bind(this));
+      $$("play_again_container").addEventListener("click", (function(){
+                                                      this.reset();
+                                                    }).bind(this));
+
+      
     }
   }
+
+  RockGame.prototype.reset = function(){
+    $$("help_pane").style.display = "none";
+    $$("game_pane").style.display = "block";
+    $$("play_again_container").style.display = "none";
+    $$("npc_result").innerHTML = "?";
+    $$("you_result").innerHTML = "?";
+    $$("game_result_text").innerHTML = "<br />Hold a hand and shake";
+    this.buttonPress(-1);
+  };
 
   /* on PLAY click we can contruct the game */
   RockGame.prototype.start = function(){
@@ -92,23 +106,28 @@
     for(var i=0;i<this.buttons.length;i++){
       this.buttons[i].className = "button"+i+" button";
     }
-    this.buttons[b].className = "button"+b+"_pressed button button_pressed";
-    $$("you_result").innerHTML = "<div class='button"+this.userHand+" button' />";
-    this.shakeText();
+    if(this.userHand >= 0){
+      this.buttons[b].className = "button"+b+"_pressed button button_pressed";
+      $$("you_result").innerHTML = "<div class='button"+this.userHand+" button' />";
+      $$("npc_result").innerHTML = "?";
+      this.shakeText();
+    }
   };
 
   /* when the phone is shaken increment a counter. if it's the third shake, finish the game. */
   RockGame.prototype.shake = function(){
-    this.shakeCount++;
-    var txt = "";
-    txt += this.shakeCount;
-    if(this.shakeCount > 2){
-      this.shakeCount = 0;
-      this.finish();
-    }
-    else{
-      $$("npc_result").innerHTML = "?";
-      this.shakeText();
+    if(this.userHand >=0){
+      this.shakeCount++;
+      var txt = "";
+      txt += this.shakeCount;
+      if(this.shakeCount > 2){
+        this.shakeCount = 0;
+        this.finish();
+      }
+      else{
+        $$("npc_result").innerHTML = "?";
+        this.shakeText();
+      }
     }
   };
 
@@ -194,6 +213,8 @@
       txt = "You Lose";
     }
     $$("game_result_text").innerHTML = txt;
+    $$("play_again_container").style.display = "block";
+    this.userHand = -1;
   };
 
 

@@ -41,14 +41,25 @@
   background-color: #FFFFFF;
   margin-top: -169px;
 }
-#ok_container {
+#ok_container, #play_again_container {
   clear: both;
   position: relative;
   font-size:80px;
   text-align:center;
   height: 100px;
   margin-top: -100px;
+  z-index: 11;
+  display: none;
+  background-color: #FFFFFF;
 }
+#ok_container {
+  display: block;
+}
+#play_again_container {
+  height: 169px;
+  margin-top: -169px;
+  font-size: 60px;
+ }
 
 .button0 {
   background-image: url("images/rock.png");
