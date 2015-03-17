@@ -4,17 +4,7 @@
  * License: MIT license
  */
 
-(function(global, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(function() {
-      return factory(global, global.document);
-    });
-  } else if (typeof module !== 'undefined' && module.exports) {
-    module.exports = factory(global, global.document);
-  } else {
-    global.RockGame = factory(global, global.document);
-  }
-}(typeof window !== 'undefined' ? window : this, function(window, document) {
+define(["shake", "mobilecheck"], function(Shake, mobilecheck){
   /* quick element selector */
   function $$(id) {
     return document.getElementById(id);
@@ -55,8 +45,6 @@
       $$("play_again_container").addEventListener("click", (function(){
                                                       this.reset();
                                                     }).bind(this));
-
-      
     }
   }
 
@@ -216,7 +204,5 @@
     $$("play_again_container").style.display = "block";
     this.userHand = -1;
   };
-
-
 return RockGame;
-}));
+});
