@@ -156,7 +156,7 @@ define(["shake", "mobilecheck"], function(Shake, mobilecheck){
     }
     else if(npc === HAND.ROCK && 
             this.userHand === HAND.SCISSORS) {
-      winner = 1;
+      winner = 2;
     }
 
     else if(npc === HAND.PAPER && 
